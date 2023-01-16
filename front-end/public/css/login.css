@@ -2,19 +2,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
+    height: 50vh;
   }
   
   .form {
     width: 450px;
     height: auto;
+
   }
 
   #container-image{
-    width:auto;
+    width:75vh;
     height:auto;
     background-image: url('https://cdn-icons-png.flaticon.com/512/1056/1056496.png');
     background-repeat:no-repeat;
     background-size:cover;
     background-position:center center;
+  }
+
+  #btn-login{
+    padding: 5px;
+    color:white;
+    background-color: #5B559B;
   }
