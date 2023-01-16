@@ -34,4 +34,22 @@ class Paciente(models.Model):
     descripcion=models.TextField()
     
 
+class Cita(models.Model):
+    inicio_cita=models.DateTimeField()
+    fin_cita=models.DateTimeField()
+    psicologo=models.ForeignKey("Psicologo",on_delete=models.CASCADE)
+    paciente=models.ForeignKey("Paciente", on_delete=models.CASCADE,null=True, blank=True)
 
+class Educacion(models.Model):
+    universidad=models.CharField(max_length=50)
+    titulo=models.CharField(max_length=50)
+    psicologo=models.ForeignKey('Psicologo',on_delete=models.CASCADE)
+
+class Recomendacion(models.Model):
+    recomendacion=models.CharField(max_length=150, default='Recomendacion')
+    paciente=models.ForeignKey('Paciente',on_delete=models.CASCADE)
+
+class Ubicacion(models.Model):
+    latitude = models.DecimalField(max_digits=8, decimal_places=6)
+    longitude = models.DecimalField(max_digits=9, decimal_places=6)
+    psicologo=models.ForeignKey('Psicologo',on_delete=models.CASCADE)
