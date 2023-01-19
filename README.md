@@ -1,4 +1,4 @@
 # Proyecto2-LP
 
-##Hans Ramos
-##Michelle Mujica
+## Hans Ramos
+## Michelle Mujica
