@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 
@@ -8,3 +9,4 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [LoginController::class,'create'])->name('login.index');
+Route::get('/profile', [ProfileController::class,'create'])->name('profile.index');

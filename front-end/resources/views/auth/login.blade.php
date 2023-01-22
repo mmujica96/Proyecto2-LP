@@ -20,7 +20,10 @@
         {{-- <p class="border border-danger rounded-sm p-2 my-2 text-danger">* Error</p> --}}
 
         <div class="text-center p-4" >
-            <button type="submit" class="btn" id="btn-login">Login</button>
+            <button type="submit" class="btn" id="btn-login" >
+              <a class="text-white text-decoration-none" href="{{route('profile.index')}}">Login
+              </a>
+            </button>
         </div>
       </form>
     </div>
