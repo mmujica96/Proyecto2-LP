@@ -1,0 +1,127 @@
+/*body {
+  background-image: url("https://w7.pngwing.com/pngs/558/396/png-transparent-white-and-black-caduceus-logo-medical-psychology-psychologist-physician-clinical-psychology-hyderabad-medical-diagnosis-psychology-medicine.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ }*/
+
+.container{
+
+
+}
+
+.informacionContainer{
+  display:flex;
+  margin:2rem;
+  height: 35vh;
+}
+
+.foto{
+  width: 15vw;
+ 
+  height: 25vh;
+  margin: 1rem;
+}
+
+.foto1{
+  background-image: url("https://cdn0.psicologia-online.com/es/posts/1/9/4/que_es_la_anamnesis_psicologica_y_como_hacerla_5491_600_square.jpg");
+  background-attachment: scroll;
+  
+}
+.informacion1{
+  background-color: white;
+
+  width: 55vw;
+  margin: 1rem;
+  text-align: left;
+}
+
+.informacion1 img{
+  border-radius: 100%;
+  width: 3rem;
+}
+.informacion1 label{
+  color:white;
+  margin-left: 0.5rem;
+}
+
+.informacion{
+  background-color: white;
+  border-radius: 2px;
+  width: 55vw;
+  margin: 1rem;
+  text-align: center;
+  line-height: 100px;
+}
+
+.informacion2{
+  background-color: white;
+ 
+  border-radius: 2px;
+  width: 55vw;
+  margin: 1rem;
+}
+
+.informacion3{
+  background: rgba(131, 128, 127, 0.5);
+}
+
+.ultimoContenedorQueHagoHoy{
+  display:flex;
+}
+.cuadroMorado{
+  border-radius: 15px;
+  background-color: #5B559B;
+  border:1px black solid;
+  margin: 1rem;
+}
+
+.ubicacion{
+  border-radius: 10px;
+  border:1px black solid;
+  background: rgba(131, 128, 127, 0.5);
+  width: 25vw;
+  margin: 1rem;
+  text-align: center;
+  line-height: 100px;
+  font-size: 50px;
+  opacity: 80%;
+}
+
+.more{
+  background-color: rgb(102, 204, 82);
+  margin: 1rem 6rem 0rem 6rem;
+  border-radius: 10%;
+}
+
+.cuadroGris p{
+  font-size: 20px;
+  margin-top:-1rem;
+  
+  
+}
+
+#contenedor {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#contenedor > div {
+  width: 50%;
+
+}
+
+#contenedor li {
+  margin-top: 0.2rem;
+}
+
+.cuadroInformacion{
+  text-align: left;
+  margin-left: 1rem;
+  border-radius: 10px;
+  background: rgba(131, 128, 127, 0.5);
+  border: 1px black solid;
+}
+
+
+
