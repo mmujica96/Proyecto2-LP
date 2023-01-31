@@ -15,8 +15,6 @@
                 <a class="h2 text-dark text-decoration-none" href="{{route('login.index')}}">Paciente</a>
               </div>
         </div>
-homeeee
-
       </section>
 
 @endsection

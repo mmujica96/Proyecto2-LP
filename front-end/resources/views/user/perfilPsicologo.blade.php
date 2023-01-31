@@ -6,52 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User - Citas Psicologos</title> <!--title, estable el nombre del titulo de la pagina @yield('title') -->
     <link rel="stylesheet" href="{{ asset('css/perfilPsicologo.css') }}">
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <!-- Optional JavaScript -->
-   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-   <!-- Data Table -->
-   
-    
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/sb-1.0.0/sp-1.2.1/datatables.min.css"/>
- 
-<script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/sb-1.0.0/sp-1.2.1/datatables.min.js"></script>
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
  <!-- Font awesome -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
 <body class="vh-100">
-   <header>
-    <nav class="navbar navbar-expand-lg p-0" style="background-color: #5B559B;">
-        <div class="col navbar-nav">
-            <div class="row pl-4 pt-1 pb-1 align-items-center w-50" style="background-color: #77BCFB; border-radius:0 32px 32px 0">
-                <div class="" id="imagenAvatar">
-                    <img 
-                src="https://www.gravatar.com/avatar/d9691184a54bfa1defe3dc7d625bc959p" 
-                class="rounded-circle" 
-                style="width: 50px;"
-                alt="Avatar" />
-                </div>
-                <div class="h4 text-center pl-2">David Rendon</div>
-                <div class="500px"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg p-0" style="background-color: #5B559B;">
+          <div class="col navbar-nav">
+              <div class="col col-4 d-flex justify-content-center pl-4 pt-1 pb-1 align-items-center " style="background-color: #77BCFB; border-radius:0 32px 32px 0">
+                  <div class="" id="imagenAvatar">
+                      <img 
+                  src="https://www.gravatar.com/avatar/d9691184a54bfa1defe3dc7d625bc959p" 
+                  class="rounded-circle" 
+                  style="width: 50px;"
+                  alt="Avatar" />
+                  </div>
+                  <div class="col h4 text-center pl-2">David Rendon</div>
+              </div>
             </div>
-            </div>
-            <div class="col-sm-2-4" style="text-align: right;"S>
-                <a class="nav-link text-white" href="login"><i class="fas fa-sign-out-alt"></i></a>
-            </div>
-        </div>
-     </nav>
-   </header>
+              <div class="col-sm col-8" style="text-align: right;"S>
+                  <a class="nav-link text-white" href="login"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+          </div>
+       </nav>
+       </header>
 
    <main> 
    <div class="container" id="cuerpo">
-    
-
         <div class="informacionContainer">
             <div class="informacion1">
                 <div class="cuadroMorado">
@@ -65,7 +49,9 @@
             </div>
             <div class="ubicacion">
                 <div class="cuadroGris"> 
-                    <div class="more">+</div>
+                    <div class="container text-center py-2">
+                        <button class="btn btn-outline-light btn-sm" id="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button> 
+                    </div>
                     <p>Agendar cita</p>
                 </div>
 
@@ -101,11 +87,42 @@
         </div>
 
    </div>
-
-   
-
    </main>
-
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Horarios Disponibles</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="" id="avatar">
+                  <img class="rounded-circle shadow-1-strong me-3 img-thumbnail"
+                              src="https://randomuser.me/api/portraits/men/78.jpg" alt="avatar" width="65"
+                              height="65" />
+                </div>
+                <div>
+                  <div class="bg-indigo-600">
+                    Disponible
+                  </div>
+                  <div class="bg-gray-300">
+                    No Disponible
+                  </div>
+                </div>
+                <div id="horarios">
+    
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Grabar cita</button>
+            </div>
+          </div>
+        </div>
+      </div>
    
    
    
