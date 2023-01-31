@@ -49,8 +49,8 @@
             </div>
             <div class="ubicacion">
                 <div class="cuadroGris"> 
-                    <div class="container text-center py-2">
-                        <button class="btn btn-outline-light btn-sm" id="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button> 
+                    <div class="container text-center py-1">
+                        <button class="btn btn-success btn-sm" id="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button> 
                     </div>
                     <p>Agendar cita</p>
                 </div>
@@ -104,21 +104,121 @@
                               height="65" />
                 </div>
                 <div>
-                  <div class="bg-indigo-600">
+                  <div class="bg-indigo">
                     Disponible
                   </div>
-                  <div class="bg-gray-300">
+                  <div class="bg-gray">
                     No Disponible
                   </div>
                 </div>
                 <div id="horarios">
-    
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Grabar cita</button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Grabar cita</button>
             </div>
           </div>
         </div>
