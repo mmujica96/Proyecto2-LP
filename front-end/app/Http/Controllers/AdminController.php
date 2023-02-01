@@ -11,7 +11,6 @@ class AdminController extends Controller
     }
     
     public function store(Request $request){
-        
         $url = "http://localhost:8000/psicologos/psicologos/";
         $request_json = json_encode($request-> all());
         $curl = curl_init();
@@ -64,6 +63,10 @@ class AdminController extends Controller
         $response = curl_exec($ch);
         curl_close($ch);
         return redirect()-> route('admin.index');
+    }
+
+    public function cargar(Request $request){
+        return $request->all();
     }
     
 }

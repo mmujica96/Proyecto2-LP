@@ -36,56 +36,24 @@
         <div class="row d-flex justify-content-center">
             <div class="col py-2 shadow p-3 mb-5 bg-body rounded" id="busqueda" style="background-color: #f8f9fa">
                 <div class="p-2 " id="buscar">
+                  <form action="" method="get">
                     <label for="browser" class="form-label h5">Buscar por sector:</label>
-                    <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option value="" selected>.....</option>
+                    <select id="sector" name='sector' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                        <option value="" selected>Seleccion un valor</option>
                         <option value="C">Centro</option>
                         <option value="N">Norte</option>
                         <option value="S">Sur</option>
-
                       </select>
+                  
+                      <input type="submit" value="Submit">
+                  </form>
                 </div>
-                <div class="row mx-1">
-                    <div class="col">
-                      <div class="d-flex flex-start" style="align-items: center;">
-                        <img class="rounded-circle shadow-1-strong me-3 img-thumbnail"
-                          src="https://randomuser.me/api/portraits/women/76.jpg" alt="avatar" width="65"
-                          height="65" />
-                        <div class="flex-grow-1 flex-shrink-1 pl-1 text center ">
-                          <div class="" style="background-color: #5B559B; border-radius:15px">
-                            <div class="d-flex justify-content-center">
-                              <p class="mb-1 h6 text-white">
-                                <a class="text-white text-decoration-none" href="{{route('perfilPsicologo.index')}}">
-                                  Maria Smantha - Psicoanalista <span class="small"></span>
-                                </a>
-                              </p>
-                            </div>
-                            <p class="small mb-0 text-white-50 text-center">
-                                “El mindfullnes puede ser importante para eliminar la ansiedad”
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-      
-                      <div class="d-flex flex-start mt-4" style="align-items: center;">
-                        <img class="rounded-circle shadow-1-strong me-3 img-thumbnail"
-                          src="https://randomuser.me/api/portraits/men/78.jpg" alt="avatar" width="65"
-                          height="65" />
-                        <div class="flex-grow-1 flex-shrink-1 pl-1">
-                          <div style="background-color: #5B559B; border-radius:15px">
-                            <div class="d-flex justify-content-center">
-                              <p class="mb-1 h6 text-white">Jorge Garcia - Psicologo clinico.<span class="small"></span>
-                              </p>
-                            </div>
-                            <p class="small mb-0 text-white-50 text-center" >
-                                “Reconocerce a si mismo es lo importante”
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <?php 
+                
+                echo "<h1>".$_GET['sector']."</h1>";
+
+                ?>
+                
             <div class="col " id="recomendaciones" >
                 <div class="" style="background-color: #f8f9fa; border-radius:10px">
                     <div class="h4 text-center p-4" id="titulo">
@@ -152,39 +120,3 @@
 </body>
 
 </html>
-
-<?php
-                          $url = "http://localhost:8000/psicologos/psicologos/";
-                          $json = file_get_contents($url);
-                          $data = json_decode($json, true);
-                          $psicologos=$data["psicologos"];
-                          var_dump($psicologos);
-                          foreach ($psicologos as $psicologo) {
-                            $nombre=$psicologo["nombre"];
-                            $categoria= $psicologo["categoria"];
-                            $ub=$psicologo["sector"];
-                            $descripcion = $psicologo["descripcion"];
-                            $id=$psicologo["id"];
-                            echo "<div class='d-flex flex-start' style='align-items: center;''>
-                              <img class='rounded-circle shadow-1-strong me-3 img-thumbnail'
-                                src='https://randomuser.me/api/portraits/women/76.jpg' alt='avatar' width='65
-                                height='65' />
-                              <div class='flex-grow-1 flex-shrink-1 pl-1 text center'>
-                                <div class='' style='background-color: #5B559B; border-radius:15px'>
-                                  <div class='d-flex justify-content-center'>
-                                    <p class='mb-1 h6 text-white'>
-                                      <a class='text-white text-decoration-none' href='{{route('perfilPsicologo.index')}}'>
-                                        $nombre - $categoria <span class='small'></span>
-                                      </a>
-                                    </p>
-                                  </div>
-                                  <p class='small mb-0 text-white-50 text-center'>
-                                      $descripcion
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            ";
-                            
-                          }
-                        ?>
