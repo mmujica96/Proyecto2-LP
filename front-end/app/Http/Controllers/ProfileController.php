@@ -8,7 +8,7 @@ use App\Models\User;
 class ProfileController extends Controller
 {
     public function create(){
-        return view('user.profile'); //nombrecarpeta.nombrearchivo
+        return view('user.perfilPaciente'); //nombrecarpeta.nombrearchivo
     }
  
 }

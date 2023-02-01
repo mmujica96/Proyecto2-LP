@@ -38,10 +38,11 @@
                 <div class="p-2 " id="buscar">
                     <label for="browser" class="form-label h5">Buscar por sector:</label>
                     <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option selected></option>
-                        <option value="centro">Centro</option>
-                        <option value="norte">Norte</option>
-                        <option value="sur">Sur</option>
+                        <option value="" selected>.....</option>
+                        <option value="C">Centro</option>
+                        <option value="N">Norte</option>
+                        <option value="S">Sur</option>
+
                       </select>
                 </div>
                 <div class="row mx-1">
@@ -152,5 +153,38 @@
 
 </html>
 
-
-
+<?php
+                          $url = "http://localhost:8000/psicologos/psicologos/";
+                          $json = file_get_contents($url);
+                          $data = json_decode($json, true);
+                          $psicologos=$data["psicologos"];
+                          var_dump($psicologos);
+                          foreach ($psicologos as $psicologo) {
+                            $nombre=$psicologo["nombre"];
+                            $categoria= $psicologo["categoria"];
+                            $ub=$psicologo["sector"];
+                            $descripcion = $psicologo["descripcion"];
+                            $id=$psicologo["id"];
+                            echo "<div class='d-flex flex-start' style='align-items: center;''>
+                              <img class='rounded-circle shadow-1-strong me-3 img-thumbnail'
+                                src='https://randomuser.me/api/portraits/women/76.jpg' alt='avatar' width='65
+                                height='65' />
+                              <div class='flex-grow-1 flex-shrink-1 pl-1 text center'>
+                                <div class='' style='background-color: #5B559B; border-radius:15px'>
+                                  <div class='d-flex justify-content-center'>
+                                    <p class='mb-1 h6 text-white'>
+                                      <a class='text-white text-decoration-none' href='{{route('perfilPsicologo.index')}}'>
+                                        $nombre - $categoria <span class='small'></span>
+                                      </a>
+                                    </p>
+                                  </div>
+                                  <p class='small mb-0 text-white-50 text-center'>
+                                      $descripcion
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            ";
+                            
+                          }
+                        ?>

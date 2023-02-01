@@ -10,5 +10,5 @@ Route::get('/', function () {
 });
 
 Route::get('/login', [LoginController::class,'create'])->name('login.index');
-Route::get('/profile', [ProfileController::class,'create'])->name('profile.index');
+Route::get('/perfilPaciente', [ProfileController::class,'create'])->name('perfilPaciente.index');
 Route::get('/perfilPsicologo', [perfilPsicologoController::class,'create'])->name('perfilPsicologo.index');
