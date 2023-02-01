@@ -36,24 +36,66 @@
         <div class="row d-flex justify-content-center">
             <div class="col py-2 shadow p-3 mb-5 bg-body rounded" id="busqueda" style="background-color: #f8f9fa">
                 <div class="p-2 " id="buscar">
-                  <form action="" method="get">
-                    <label for="browser" class="form-label h5">Buscar por sector:</label>
-                    <select id="sector" name='sector' class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                        <option value="" selected>Seleccion un valor</option>
-                        <option value="C">Centro</option>
-                        <option value="N">Norte</option>
-                        <option value="S">Sur</option>
+                    <form action="" method="get">
+                      <label for="browser" class="form-label h5">Buscar por sector:</label>
+                    <select id="sector" name="sector" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                      <option value="" selected>Escoge el sector</option>  
+                      <option value="N">Norte</option>
+                            <option value="C">Centro</option>
+                            <option value="S">Sur</option>
+                            <option value="SA">Samborondon</option>
+                            <option value="DA">Daule</option>
                       </select>
-                  
-                      <input type="submit" value="Submit">
-                  </form>
+                      <input type="submit" value="Buscar">
+                    </form>
                 </div>
-                <?php 
-                
-                echo "<h1>".$_GET['sector']."</h1>";
+                <div class="row mx-1">
+                    <div class="col">
+                      <?php 
+                          if(isset($_GET["sector"])) {
+                            $sector = $_GET["sector"];
+                            $url = "http://localhost:8000/psicologos/psicologos/";
+                            $json = file_get_contents($url);
+                            $data = json_decode($json, true);
+                            $psicologos=$data["psicologos"];
+                            foreach ($psicologos as $psicologo) {
+                              $nombre=$psicologo["nombre"];
+                              $categoria= $psicologo["categoria"];
+                              $ub=$psicologo["sector"];
+                              $descripcion = $psicologo["descripcion"];
+                              $id = $psicologo["id"];
+                              if ($ub == $sector) {
+                                echo "<div class='d-flex flex-start' style='align-items: center;''>
+                                <img class='rounded-circle shadow-1-strong me-3 img-thumbnail'
+                                  src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' alt='avatar' width='60
+                                  height='60' />
+                                <div class='flex-grow-1 flex-shrink-1 pl-1 text center'>
+                                  <div class='' style='background-color: #5B559B; border-radius:15px'>
+                                    <div class='d-flex justify-content-center'>
+                                      <p class='mb-1 h6 text-white'>
+                                        <a class='text-white text-decoration-none' href='https://localhost/CitasPsicologos/front-end/public/perfilPsicologo/$id'>
+                                          $nombre - $categoria <span class='small'></span>
+                                        </a>
+                                      </p>
+                                    </div>
+                                    <p class='small mb-0 text-white-50 text-center'>
+                                        $descripcion
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                              ";
+                              }    
+                            }
+                          }
 
-                ?>
-                
+
+
+
+                        ?>
+                    </div>
+                  </div>
+                </div>
             <div class="col " id="recomendaciones" >
                 <div class="" style="background-color: #f8f9fa; border-radius:10px">
                     <div class="h4 text-center p-4" id="titulo">
@@ -120,3 +162,9 @@
 </body>
 
 </html>
+<<<<<<< HEAD
+=======
+
+
+                          
+>>>>>>> e128d5d81e087178bb0cfe733f44bed899b8b05b

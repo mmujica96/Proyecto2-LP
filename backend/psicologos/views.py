@@ -196,3 +196,22 @@ class EducacionesView(View):
         else:
             datos={'mensaje': 'No encontramos titulos'}
         return JsonResponse(datos)
+
+
+class EducacionesView(View):
+    def get(self, request,id=0):
+        if(id==0):
+            citas=list(Educacion.objects.values())
+            if len(citas)>0:
+                datos={'mensaje': 'exito', 'titulos': citas}
+            else:
+                datos={'mensaje': 'No encontramos titulos'}
+            return JsonResponse(datos)
+        else:
+        
+            educaciones=list(Educacion.objects.filter(psicologo_id=id).values())
+            if(len(educaciones)>0):
+                datos={'mensaje': 'exito', 'titulos': educaciones}
+            else:
+                datos={'mensaje': 'No encontramos titulos'}
+            return JsonResponse(datos)

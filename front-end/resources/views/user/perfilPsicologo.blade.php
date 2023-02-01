@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>User - Citas Psicologos</title> <!--title, estable el nombre del titulo de la pagina @yield('title') -->
     <link rel="stylesheet" href="{{ asset('css/perfilPsicologo.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -25,10 +24,10 @@
                   style="width: 50px;"
                   alt="Avatar" />
                   </div>
-                  <div class="col h4 text-center pl-2">David Rendon</div>
+                  <div class="col h5 text-center pl-2">David Rendon</div>
               </div>
             </div>
-              <div class="col-sm col-8" style="text-align: right;"S>
+              <div class="col-sm col-8" style="text-align: right;">
                   <a class="nav-link text-white" href="login"><i class="fas fa-sign-out-alt"></i></a>
               </div>
           </div>
@@ -36,24 +35,14 @@
        </header>
 
    <main> 
-    <?php
-    $url = "http://localhost:8000/psicologos/citas/";
-    $resultado = file_get_contents($url);
-    $datos = json_decode($resultado, true);
-    $nombre="hansillo";
-    echo "<h1> $nombre</h1>";
-    $fecha= $datos["citas"]["0"]["inicio_cita"];
-    echo "<h3>La cita empezara a $fecha</h3>"
-    ?>
    <div class="container" id="cuerpo">
         <div class="informacionContainer">
             <div class="informacion1">
-                <div class="cuadroMorado">
+                <div class="cuadroMorado mx-2 text-center">
                     <img src="https://uploads-ssl.webflow.com/6321fa4eb9021afb4a237ebb/63518b3451899cb324570c0e_IMA0000460000046712.jpeg" alt="">
-                    <label for="">Andrea Salazar - Psicoanalista</label>
+                    <label for="" class="h4"><?php  echo $psicologo['nombre'] ?></label>
                     <div class="informacionPsicologo">
-                        <label for="">Descripción: Apasionada del crecimiento personal, siempre buscando nuevas maneras de
-                            llegar a mis pacientes me tomo enserio el valor de escuchar lo que sucede a cada persona.</label>
+                        <p class="text-white-50"><?php echo $psicologo['descripcion'] ?></p>
                     </div>
                 </div>
             </div>
@@ -73,8 +62,12 @@
                         <h4>Informacion</h4>
                         <div id="contenedor">
                             <div>
-                                <ul>
-                                    <li><p><strong>Estudios de grado:</strong> Lic. en Psicologia</p></li>
+                                <ul><?php foreach($estudios as $estudio){
+                                    $titulo = $estudio['titulo'];
+                                    $universidad = $estudio['universidad'];
+                                        echo "<li><p><strong>Estudios de grado:</strong> $titulo - $universidad</p></li>";
+                                    }
+                                     ?>
                                     <li><p><strong>Estudios de post-grado:</strong> Msc. en Psicoanalisis</p></li>
                                     <li><p><strong>clientes atendidos:</strong> 57</p></li>
                                     
