@@ -25,7 +25,7 @@
                   style="width: 50px;"
                   alt="Avatar" />
                   </div>
-                  <div class="col h4 text-center pl-2">David Rendon</div>
+                  <div class="col h4 text-center pl-2">David Rendn</div>
               </div>
             </div>
               <div class="col-sm col-8" style="text-align: right;"S>
@@ -36,7 +36,7 @@
        </header>
 
    <main> 
-    <?php
+    {{-- <?php
     $url = "http://localhost:8000/psicologos/citas/";
     $resultado = file_get_contents($url);
     $datos = json_decode($resultado, true);
@@ -44,16 +44,15 @@
     echo "<h1> $nombre</h1>";
     $fecha= $datos["citas"]["0"]["inicio_cita"];
     echo "<h3>La cita empezara a $fecha</h3>"
-    ?>
+    ?> --}}
    <div class="container" id="cuerpo">
         <div class="informacionContainer">
             <div class="informacion1">
                 <div class="cuadroMorado">
                     <img src="https://uploads-ssl.webflow.com/6321fa4eb9021afb4a237ebb/63518b3451899cb324570c0e_IMA0000460000046712.jpeg" alt="">
-                    <label for="">Andrea Salazar - Psicoanalista</label>
+                    <label for=""><?php  echo $nombre   ?></label>
                     <div class="informacionPsicologo">
-                        <label for="">Descripción: Apasionada del crecimiento personal, siempre buscando nuevas maneras de
-                            llegar a mis pacientes me tomo enserio el valor de escuchar lo que sucede a cada persona.</label>
+                        <label for=""><?php echo $descripcion ?></label>
                     </div>
                 </div>
             </div>
