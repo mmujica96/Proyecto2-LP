@@ -12,5 +12,7 @@ urlpatterns=[
     path('ubicaciones/', UbicacionesView.as_view(), name='nombre'),
     path('recomendaciones/', RecomendacionesView.as_view(), name='nombre'),
     path('recomendaciones/<int:id>', RecomendacionesView.as_view(), name='nombre'),
+    path('educacion/', EducacionesView.as_view(), name='nombre'),
+    path('educacion/<int:id>', EducacionesView.as_view(), name='nombre')
 
 ]

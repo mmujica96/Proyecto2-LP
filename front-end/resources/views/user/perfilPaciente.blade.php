@@ -73,7 +73,7 @@
                                   <div class='' style='background-color: #5B559B; border-radius:15px'>
                                     <div class='d-flex justify-content-center'>
                                       <p class='mb-1 h6 text-white'>
-                                        <a class='text-white text-decoration-none' href='{{route('perfilPsicologo.index')}}'>
+                                        <a class='text-white text-decoration-none' href='https://localhost/CitasPsicologos/front-end/public/perfilPsicologo/$id'>
                                           $nombre - $categoria <span class='small'></span>
                                         </a>
                                       </p>
