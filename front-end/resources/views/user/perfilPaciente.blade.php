@@ -44,11 +44,20 @@
                             <option value="C">Centro</option>
                             <option value="S">Sur</option>
                             <option value="SA">Samborondon</option>
-                            <option value="DA">Daule</option>
+                            <option value="D">Daule</option>
                       </select>
                       <input type="submit" value="Buscar">
                     </form>
                 </div>
+                <style>
+                  .circular-image {
+                    width: 75px;
+                    height: 75px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    overflow: hidden;
+                  }
+                  </style>
                 <div class="row mx-1">
                     <div class="col">
                       <?php 
@@ -64,17 +73,19 @@
                               $ub=$psicologo["sector"];
                               $descripcion = $psicologo["descripcion"];
                               $id = $psicologo["id"];
+                              $imagen=$psicologo["imagen"];
                               if ($ub == $sector) {
+                                
                                 echo "<div class='d-flex flex-start' style='align-items: center;''>
-                                <img class='rounded-circle shadow-1-strong me-3 img-thumbnail'
-                                  src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' alt='avatar' width='60
-                                  height='60' />
+                                <img class='circular-image shadow-1-strong me-3 img-thumbnail'
+                                  src='$imagen' alt='avatar' width='60rem' height='60rem'
+                                 />
                                 <div class='flex-grow-1 flex-shrink-1 pl-1 text center'>
                                   <div class='' style='background-color: #5B559B; border-radius:15px'>
                                     <div class='d-flex justify-content-center'>
                                       <p class='mb-1 h6 text-white'>
-                                        <a class='text-white text-decoration-none' href='https://localhost/CitasPsicologos/front-end/public/perfilPsicologo/$id'>
-                                          $nombre - $categoria <span class='small'></span>
+                                        <a class='text-white text-decoration-none' href='http://localhost/Proyecto2-LP/front-end/public/perfilPsicologo/$id'>
+                                          $nombre - $categoria <span class='small'></span>  
                                         </a>
                                       </p>
                                     </div>
@@ -162,9 +173,6 @@
 </body>
 
 </html>
-<<<<<<< HEAD
-=======
 
 
                           
->>>>>>> e128d5d81e087178bb0cfe733f44bed899b8b05b

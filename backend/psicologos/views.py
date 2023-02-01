@@ -22,6 +22,10 @@ class UsuariosView(View):
 
 class PsicologosView(View):
 
+    @method_decorator(csrf_exempt)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
     def get(self, request,id=0):
         if(id>0):
             psicologos=list(Psicologo.objects.filter(id=id).values())
@@ -40,6 +44,43 @@ class PsicologosView(View):
             else:
                 datos={'mensaje': 'psicologos no encontrados'}
             return JsonResponse(datos)
+
+    def post(self, request):
+        jd=json.loads(request.body)
+        Psicologo.objects.create(nombre=jd['nombre'], categoria=jd['categoria'], descripcion=jd['descripcion'], sector=jd['sector'],imagen=jd["imagen"])
+        datos={'mensaje':'Exito'}
+        return JsonResponse(datos)
+
+    def put(self, request, id):
+        jd=json.loads(request.body)
+        otro=json.loads(jd)
+        print(type(otro))
+        print(otro)
+        psicologos=list(Psicologo.objects.filter(id=id).values())
+        print("luego de buscardd")
+
+        if (len(psicologos)>0):
+            psic=Psicologo.objects.get(id=id)
+            psic.nombre=otro['nombre']
+            psic.categoria=otro['categoria']
+            psic.descripcion=otro['descripcion']
+            psic.sector=otro['sector']
+            psic.imagen=otro['imagen']
+            psic.save()
+            datos={'mensaje':'exito'}
+        else:
+            datos={'mensaje': 'cita no encontrada'}
+        return JsonResponse(datos)
+
+    def delete(self, request, id):
+        citas=list(Psicologo.objects.filter(id=id).values())
+        if (len(citas)>0):
+            Psicologo.objects.filter(id=id).delete()
+            datos={'mensaje': 'exito'}
+
+        else:
+            datos={'mensaje': 'No se pudo eliminar'}
+        return JsonResponse(datos)
 
 class PacientesView(View):
 

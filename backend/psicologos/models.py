@@ -8,7 +8,6 @@ from django.contrib.gis.db import *
 class Usuario(models.Model):
     PSICOLOGO='PS'
     PACIENTE='PA'
-
     TIPO_DE_USUARIO=[(PSICOLOGO, 'psicologo'),(PACIENTE, 'paciente')]
 
     correo=models.EmailField()
@@ -27,6 +26,7 @@ class Psicologo(models.Model):
     nombre= models.CharField(max_length=50)
     categoria=models.CharField(max_length=100)
     descripcion=models.TextField()
+    imagen= models.CharField(max_length=540, null=True)
     sector=models.CharField(max_length=2, choices=SECTOR)
 
 class Paciente(models.Model):

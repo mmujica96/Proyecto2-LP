@@ -19,12 +19,20 @@ class perfilPsicologoController extends Controller
         $url2 = "http://localhost:8000/psicologos/educacion/$id";
         $json2 = file_get_contents($url2);
         $data2 = json_decode($json2, true);
-        $estudios = $data2['titulos'];
+        if($data2['mensaje']=="No encontramos titulos"){
+            $estudios= array(
+                array(
+                  "id" => 7,
+                  "universidad" => "Titulos",
+                  "titulo" => "No ha Agregado",
+                  "psicologo_id" => 1
+                )
+              );
+        }else{
+        $estudios = $data2["titulos"];
+        }
 
         return view('user.perfilPsicologo', compact('psicologo', 'estudios'));
-
-
-        
 
     }
 

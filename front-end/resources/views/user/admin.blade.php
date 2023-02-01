@@ -24,6 +24,15 @@
       <br>
       <br>
       <div class="list-group">
+      <style>
+            .circular-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+            }
+        </style>
         
         <a href="#" class="list-group-item list-group-item-action" data-toggle="collapse" data-target="#collapseList">
           Lista de Psicólogos
@@ -40,10 +49,9 @@
                     $categoria= $psicologo["categoria"];
                     $ub=$psicologo["sector"];
                     $id=$psicologo["id"];
+                    $imagen=$psicologo["imagen"];
                     echo "<li class='list-group-item list-group-item-action' data-toggle='modal' data-target='#exampleModal1' onclick='mostrarForm(". json_encode($psicologo) . ")'> 
-                    <img src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' class='rounded-circle'
-                style='width: 50px;'
-                 />
+                    <img src='$imagen' class='circular-image'/>
                       $nombre          -       $categoria     -    Ubicación: $ub</li>";
                 }
             ?>
@@ -78,13 +86,17 @@
                             <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="categoria">Foto URL</label>
+                            <input type="text" class="form-control" id="imagen" name="imagen" >
+                        </div>
+                        <div class="form-group">
                             <label for="sector">Sector</label>
                             <select class="form-control" id="sector" name="sector">
-                            <option value="NO">Norte</option>
-                            <option value="CE">Centro</option>
-                            <option value="SU">Sur</option>
+                            <option value="N">Norte</option>
+                            <option value="C">Centro</option>
+                            <option value="S">Sur</option>
                             <option value="SA">Samborondon</option>
-                            <option value="DA">Daule</option>
+                            <option value="D">Daule</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -101,10 +113,11 @@
     let id=psicologo.id.toString();
     let srgi="http://localhost/Proyecto2-LP/front-end/public/update/"+id
     let dest="http://localhost/Proyecto2-LP/front-end/public/destroy/"+id
-
+    console.log(psicologo.imagen)
     document.getElementById("formulario").setAttribute('action', srgi);
     document.getElementById("borrar_form").setAttribute('action', dest);
     document.getElementById("nombre1").value = psicologo.nombre;
+    document.getElementById("imagen1").value = psicologo.imagen;
     document.getElementById("categoria1").value = psicologo.categoria;
     document.getElementById("descripcion1").value = psicologo.descripcion;
     document.getElementById("sector1").value = psicologo.sector;
@@ -138,13 +151,17 @@
                             <textarea class="form-control" id="descripcion1" name="descripcion" rows="3" required></textarea>
                         </div>
                         <div class="form-group">
+                            <label for="categoria">Foto URL</label>
+                            <input type="text" class="form-control" id="imagen1" name="imagen" >
+                        </div>
+                        <div class="form-group">
                             <label for="sector">Sector</label>
                             <select class="form-control" id="sector1" name="sector">
-                            <option value="NO">Norte</option>
-                            <option value="CE">Centro</option>
-                            <option value="SU">Sur</option>
+                            <option value="N">Norte</option>
+                            <option value="C">Centro</option>
+                            <option value="S">Sur</option>
                             <option value="SA">Samborondon</option>
-                            <option value="DA">Daule</option>
+                            <option value="D">Daule</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>

@@ -27,7 +27,6 @@ class AdminController extends Controller
         $response = curl_exec($curl);
         curl_close($curl);
         return redirect()-> route('admin.index');
-
     }
 
     public function update(Request $request, $id){

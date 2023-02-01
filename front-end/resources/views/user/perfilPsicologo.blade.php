@@ -34,12 +34,22 @@
        </nav>
        </header>
 
+       <style>
+            .circular-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+            }
+        </style>
+
    <main> 
    <div class="container" id="cuerpo">
         <div class="informacionContainer">
             <div class="informacion1">
                 <div class="cuadroMorado mx-2 text-center">
-                    <img src="https://uploads-ssl.webflow.com/6321fa4eb9021afb4a237ebb/63518b3451899cb324570c0e_IMA0000460000046712.jpeg" alt="">
+                    <img src=<?php  echo $psicologo['imagen'] ?> alt="" class="circular-image">
                     <label for="" class="h4"><?php  echo $psicologo['nombre'] ?></label>
                     <div class="informacionPsicologo">
                         <p class="text-white-50"><?php echo $psicologo['descripcion'] ?></p>
