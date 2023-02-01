@@ -4,11 +4,10 @@
   background-attachment: fixed;
  }*/
 
-.container{
 
-
-}
-
+ h1{
+  color: blue;
+ }
 .informacionContainer{
   display:flex;
   margin:2rem;
@@ -93,6 +92,7 @@
   border-radius: 10%;
 }
 
+
 .cuadroGris p{
   font-size: 20px;
   margin-top:-1rem;
@@ -112,7 +112,7 @@
 }
 
 #contenedor li {
-  margin-top: 0.2rem;
+  margin-top: 0.222rem;
 }
 
 .cuadroInformacion{
@@ -121,6 +121,18 @@
   border-radius: 10px;
   background: rgba(131, 128, 127, 0.5);
   border: 1px black solid;
+}
+
+
+.ubicacion button{
+  width:100% ;
+  border: none;
+  border-radius: 10px;
+  background-color: rgb(102, 204, 82);;
+}
+
+.selected {
+  background-color: lightblue;
 }
 
 
