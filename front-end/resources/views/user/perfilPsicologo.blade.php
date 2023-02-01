@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>User - Citas Psicologos</title> <!--title, estable el nombre del titulo de la pagina @yield('title') -->
     <link rel="stylesheet" href="{{ asset('css/perfilPsicologo.css') }}">
     
@@ -15,7 +16,6 @@
    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
    <!-- Data Table -->
-   
     
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/sb-1.0.0/sp-1.2.1/datatables.min.css"/>
  
@@ -47,11 +47,21 @@
         </div>
      </nav>
    </header>
+    <?
+        
+    ?>
 
    <main> 
+    <?php
+    $url = "http://localhost:8000/psicologos/citas/";
+    $resultado = file_get_contents($url);
+    $datos = json_decode($resultado, true);
+    $nombre="hansillo";
+    echo "<h1> $nombre</h1>";
+    $fecha= $datos["citas"]["0"]["inicio_cita"];
+    echo "<h3>La cita empezara a $fecha</h3>"
+    ?>
    <div class="container" id="cuerpo">
-    
-
         <div class="informacionContainer">
             <div class="informacion1">
                 <div class="cuadroMorado">
@@ -64,11 +74,10 @@
                 </div>
             </div>
             <div class="ubicacion">
-                <div class="cuadroGris"> 
-                    <div class="more">+</div>
+                <div class="cuadroGris" data-toggle="modal" data-target="#exampleModal"> 
+                    <div class="more" href> <button id="modal-button" data-toggle="modal" data-target=".bd-example-modal-lg">+</button></div>
                     <p>Agendar cita</p>
                 </div>
-
             </div>    
         </div>
 
@@ -106,8 +115,27 @@
 
    </main>
 
-   
-   
+<!-- Small modal -->
+<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Calendario de citas</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
    
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 border-top" style="background-color: #BEBEBE;">
         <div class="d-flex align-items-center">
@@ -116,5 +144,4 @@
     </footer>
 </body>
 </html>
-
 

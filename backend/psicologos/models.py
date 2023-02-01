@@ -20,14 +20,14 @@ class Psicologo(models.Model):
     NORTE='N'
     SUR='S'
     CENTRO='C'
-    SAMBORONDON='S'
+    SAMBORONDON='SA'
     DAULE='D'
     SECTOR=[(NORTE,'Norte'),(SUR,'Sur'),(CENTRO,'Centro'),(SAMBORONDON,'Samborondon'),(DAULE,'Daule')]
 
     nombre= models.CharField(max_length=50)
     categoria=models.CharField(max_length=100)
     descripcion=models.TextField()
-    sector=models.CharField(max_length=1, choices=SECTOR)
+    sector=models.CharField(max_length=2, choices=SECTOR)
 
 class Paciente(models.Model):
     nombre=models.CharField(max_length=50)
