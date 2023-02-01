@@ -7,7 +7,7 @@
         <h1 class="text-center m-0">Iniciar Sesion</h1>
     </div>
     <div class="abs-center">
-      <form action="#" class="m-0 form" method="">
+      <form action="" class="m-0 form" method="get">
         <div class="form-group">
           <label for="email">Email</label>
           <input type="email" name="email" id="email" class="form-control" >
@@ -21,7 +21,7 @@
 
         <div class="text-center p-4" >
             <button type="submit" class="btn" id="btn-login" >
-              <a class="text-white text-decoration-none" href="{{route('profile.index')}}">Login</a>
+              <a class="text-white text-decoration-none" href="{{route('perfilPaciente.index')}}">Login</a>
             </button>
         </div>
       </form>
@@ -29,3 +29,5 @@
   </div>
      
 @endsection
+<?php
+?>
