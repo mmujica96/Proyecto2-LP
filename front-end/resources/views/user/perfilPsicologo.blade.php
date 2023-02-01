@@ -7,6 +7,7 @@
 
     <title>User - Citas Psicologos</title> <!--title, estable el nombre del titulo de la pagina @yield('title') -->
     <link rel="stylesheet" href="{{ asset('css/perfilPsicologo.css') }}">
+<<<<<<< HEAD
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- Optional JavaScript -->
@@ -21,25 +22,30 @@
  
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.22/r-2.2.6/sc-2.0.3/sb-1.0.0/sp-1.2.1/datatables.min.js"></script>
 
+=======
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+>>>>>>> 19acc7c42f2fceaf9995f5a36edde8b15e671ff4
  <!-- Font awesome -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 
 </head>
 <body class="vh-100">
-   <header>
-    <nav class="navbar navbar-expand-lg p-0" style="background-color: #5B559B;">
-        <div class="col navbar-nav">
-            <div class="row pl-4 pt-1 pb-1 align-items-center w-50" style="background-color: #77BCFB; border-radius:0 32px 32px 0">
-                <div class="" id="imagenAvatar">
-                    <img 
-                src="https://www.gravatar.com/avatar/d9691184a54bfa1defe3dc7d625bc959p" 
-                class="rounded-circle" 
-                style="width: 50px;"
-                alt="Avatar" />
-                </div>
-                <div class="h4 text-center pl-2">David Rendon</div>
-                <div class="500px"></div>
+    <header>
+        <nav class="navbar navbar-expand-lg p-0" style="background-color: #5B559B;">
+          <div class="col navbar-nav">
+              <div class="col col-4 d-flex justify-content-center pl-4 pt-1 pb-1 align-items-center " style="background-color: #77BCFB; border-radius:0 32px 32px 0">
+                  <div class="" id="imagenAvatar">
+                      <img 
+                  src="https://www.gravatar.com/avatar/d9691184a54bfa1defe3dc7d625bc959p" 
+                  class="rounded-circle" 
+                  style="width: 50px;"
+                  alt="Avatar" />
+                  </div>
+                  <div class="col h4 text-center pl-2">David Rendon</div>
+              </div>
             </div>
+<<<<<<< HEAD
             </div>
             <div class="col-sm-2-4" style="text-align: right;"S>
                 <a class="nav-link text-white" href="login"><i class="fas fa-sign-out-alt"></i></a>
@@ -50,6 +56,14 @@
     <?
         
     ?>
+=======
+              <div class="col-sm col-8" style="text-align: right;"S>
+                  <a class="nav-link text-white" href="login"><i class="fas fa-sign-out-alt"></i></a>
+              </div>
+          </div>
+       </nav>
+       </header>
+>>>>>>> 19acc7c42f2fceaf9995f5a36edde8b15e671ff4
 
    <main> 
     <?php
@@ -74,8 +88,15 @@
                 </div>
             </div>
             <div class="ubicacion">
+<<<<<<< HEAD
                 <div class="cuadroGris" data-toggle="modal" data-target="#exampleModal"> 
                     <div class="more" href> <button id="modal-button" data-toggle="modal" data-target=".bd-example-modal-lg">+</button></div>
+=======
+                <div class="cuadroGris"> 
+                    <div class="container text-center py-1">
+                        <button class="btn btn-success btn-sm" id="modal-button" data-bs-toggle="modal" data-bs-target="#exampleModal">+</button> 
+                    </div>
+>>>>>>> 19acc7c42f2fceaf9995f5a36edde8b15e671ff4
                     <p>Agendar cita</p>
                 </div>
             </div>    
@@ -110,32 +131,144 @@
         </div>
 
    </div>
-
-   
-
    </main>
-
-<!-- Small modal -->
-<div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Calendario de citas</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Horarios Disponibles</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="" id="avatar">
+                  <img class="rounded-circle shadow-1-strong me-3 img-thumbnail"
+                              src="https://randomuser.me/api/portraits/men/78.jpg" alt="avatar" width="65"
+                              height="65" />
+                </div>
+                <div>
+                  <div class="bg-indigo">
+                    Disponible
+                  </div>
+                  <div class="bg-gray">
+                    No Disponible
+                  </div>
+                </div>
+                <div id="horarios">
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container pt-2">
+                        <div><p><strong>Lunes 30 de enero</strong></p></div>
+                        <hr>
+                        <div class="d-block">
+                            <p><strong>Unidad: </strong> DoctorPlus</p>
+                            <p><strong>Direccion: </strong> garzota mz.9 </p>
+                        </div>
+                        <div id="horas">
+                            <div class="d-flex align-content-around" id="am">
+                                <p><strong>AM: </strong></p>
+                                <div>9:00</div>
+                                <div>10:00</div>
+                                <div>11:00</div>
+                                <div>12:00</div>                                
+                            </div>
+                            <div id="pm">
+                                <p><strong>PM: </strong></p>
+                                <div>14:00</div>
+                                <div>15:00</div>
+                                <div>16:00</div>
+                                <div>17:00</div>
+                                <div>18:00</div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-success">Grabar cita</button>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+   
+   
    
     <footer class="d-flex flex-wrap justify-content-center align-items-center py-3 border-top" style="background-color: #BEBEBE;">
         <div class="d-flex align-items-center">
